@@ -1,0 +1,36 @@
+Bouncing Balls Documentation
+
+This game was programmed in the Processing computer language
+It uses physics-based math to calculate how the balls move
+
+Main File:
+This file controls how the game runs
+In normal operation, it does 2 things: setup and draw
+   - The code in setup runs once when the program starts up
+   - The code in draw repeats every frame. This is where most things happen.
+Before anything else, the program initializes all ball objects and global variables
+   - If it initializes things in setup, they can't be accessed in draw. Variables like this are called local variables.
+
+Setup:
+In setup, the game
+   - sets the screen size to fullscreen
+   - sets the balls' types (standard to start for the launchable ball)
+   - assigns the menu balls' postitions
+The last 2 can be done in the global environment, but I happened to do it in setup
+
+
+Menu:
+The menu is a grey rectangle drawn with the dimensions [screen width/3] and [screen height/6]
+The balls in the menu are identical to the launchable ball, but they just never move
+The balls' positions are fractioned based off the screens' dimensions
+   - I split the rectangle into 4 pieces and used fractional math to place the balls on the split lines
+The text uses very basic Processing functions and reference their corresponding ball's position when being displayed
+
+Balls:
+The balls are made using a class
+   - Each ball has properties: x-position, y-position, diameter, mass, x-acceleration, and y-acceleration, and colour
+The launchable ball is referenced as b1 in the code while the menu balls are ex1, ex2, and ex3 from left to right
+
+Gravity:
+9.8m/s = 0.1633p/f
+9.8m/s 60f/s 1p/m
